@@ -9,9 +9,9 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
     const arr = [];
     for (const element of values) {
       if (element.status === 'fulfilled')
-        arr.push({ status: element.status, value: element.value });
+        arr.push({ status: `${element.status}`, value: element.value });
       else {
-        arr.push({ status: element.status, value: `${element.reason}` });
+        arr.push({ status: `${element.status}`, value: `${element.reason}` });
       }
     }
 
