@@ -8,7 +8,7 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
       if (element.status === 'fulfilled') {
         arr.push({ status: element.status, value: element.value });
       } else if (element.status === 'rejected') {
-        arr.push({ status: element.status, value: element.reason });
+        arr.push({ status: element.status, value: `${element.reason}` });
       }
     });
 
