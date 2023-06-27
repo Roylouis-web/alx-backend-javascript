@@ -5,5 +5,5 @@ export default async function asyncUploadUser() {
       photo: results[0],
       user: results[1],
     }))
-    .catch(() => ({ photo: {}, user: {} }));
+    .catch((error) => ({ photo: null, user: null }));
 }

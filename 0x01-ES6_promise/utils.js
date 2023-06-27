@@ -7,7 +7,7 @@ export function uploadPhoto() {
 
 
 export function createUser() {
-  return Promise.resolve({
+  return Promise.reject({
     firstName: 'Guillaume',
     lastName: 'Salva',
   });
