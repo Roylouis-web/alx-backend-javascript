@@ -8,9 +8,11 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
   return Promise.allSettled([p1, p2]).then((values) => {
     const arr = [];
     for (const element of values) {
-      element.status === 'fulfilled'
-        ? arr.push({ status: element.status, value: element.value })
-        : arr.push({ status: element.status, value: `${element.reason}` });
+      if (element.status === 'fulfilled')
+        arr.push({ status: element.status, value: element.value });
+      else {
+        arr.push({ status: element.status, value: `${element.reason}` });
+      }
     }
 
     return arr;
