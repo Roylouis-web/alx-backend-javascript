@@ -7,7 +7,7 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
     values.forEach((element) => {
       if (element.status === 'fulfilled') {
         arr.push({ status: element.status, value: element.value });
-      } else if (element.status === 'rejected') {
+      } else {
         arr.push({ status: element.status, value: `${element.reason}` });
       }
     });
