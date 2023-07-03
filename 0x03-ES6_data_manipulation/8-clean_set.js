@@ -3,7 +3,7 @@ export default function cleanSet(set, startString) {
     const arr = [];
     set.forEach((element) => {
       if (element.split(startString)[1]) {
-        arr.push(element.split(startString)[1])
+        arr.push(element.split(startString)[1]);
       }
     });
     return arr.join('-');
