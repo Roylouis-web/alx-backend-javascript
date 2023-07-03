@@ -5,9 +5,11 @@ export default function updateStudentGradeByCity(students, city, newGrades) {
       const match = newGrades.find(
         (student) => student.studentId === filteredStudent.id
       );
-      match
-        ? (filteredStudent.grade = match.grade)
-        : (filteredStudent.grade = 'N/A');
+      if (match) {
+        filteredStudent.grade = match.grade;
+      } else {
+        filteredStudent.grade = 'N/A';
+      }
       return filteredStudent;
     });
 }
