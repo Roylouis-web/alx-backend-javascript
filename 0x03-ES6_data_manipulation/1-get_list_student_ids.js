@@ -1,5 +1,5 @@
 export default function getListStudentIds(arrOfObjs) {
-  if (!Array.isArray(arrOfObjs)) {
+  if (!(Array.isArray(arrOfObjs))) {
     return [];
   }
 
