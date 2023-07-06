@@ -19,12 +19,4 @@ namespace Subjects {
       return `Available Teacher: ${this.teacher.firstName}`;
     }
   }
-
-  export const cpp: typeof Cpp = Cpp;
-  
-  export const cTeacher: Teacher = {
-    firstName: 'John',
-    lastName: 'Matthew',
-    experienceTeachingC: 10,
-  } 
 }
