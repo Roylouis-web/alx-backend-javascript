@@ -1,11 +1,11 @@
 interface MajorCredits {
   credits: number;
-  brand: string;
+  _majorCreditBrand: void;
 }
 
 interface MinorCredits {
   credits: number;
-  brand: string;
+  _minorCreditBrand: void;
 }
 
 const sumMajorCredits = (subject1: MajorCredits, subject2: MajorCredits): number => {
