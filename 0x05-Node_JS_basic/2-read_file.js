@@ -1,10 +1,9 @@
 const { readFileSync } = require('fs');
 
 const countStudents = (path) => {
-  let content = null;
-  const studentArr = [];
   try {
-    content = readFileSync(path, { encoding: 'utf8' });
+    const content = readFileSync(path, { encoding: 'utf8' });
+    const studentArr = [];
     let str = '';
 
     for (const i in content) {
