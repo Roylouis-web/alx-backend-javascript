@@ -9,11 +9,9 @@ const countStudents = (path) => {
     for (const i in content) {
       if (content[i] !== '\n') {
         str += content[i];
-      } else {
-        if (str !== '') {
-          studentArr.push(str.split(','));
-          str = '';
-        }
+      } else if (content[i] === '\n' && str !== '') {
+        studentArr.push(str.split(','));
+        str = '';
       }
     }
 
