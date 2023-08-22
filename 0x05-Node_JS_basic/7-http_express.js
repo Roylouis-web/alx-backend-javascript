@@ -19,7 +19,8 @@ app.get('/students', async (req, res) => {
     const result = `${head}${studentCount}${filteredMessages}`;
     res.send(result);
   } catch (error) {
-    res.end('Cannot load the database');
+    const head = 'This is the list of our students\n';
+    res.end(`${head}Cannot load the database`);
   }
 });
 

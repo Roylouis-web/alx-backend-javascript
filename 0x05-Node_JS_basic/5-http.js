@@ -17,7 +17,9 @@ const app = http.createServer(async (req, res) => {
       const result = `${head}${studentCount}${filteredMessages}`;
       res.end(result);
     } catch (error) {
-      res.end('Cannot load the database');
+      const head = 'This is the list of our students\n';
+      res.write(`${head}Cannot load the database`);
+      res.end();
     }
   }
 });
