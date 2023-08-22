@@ -1,7 +1,8 @@
 const express = require('express');
 const process = require('process');
 const countStudents = require('./5-test');
-const argv = process.argv;
+
+const { argv } = process.argv;
 const app = express();
 
 app.get('/', (req, res) => {

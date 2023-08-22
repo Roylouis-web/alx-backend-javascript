@@ -1,23 +1,21 @@
 const { readFile } = require('fs');
 
-const countStudents = (path) => {
-  return new Promise((resolve, reject) => {
-    readFile(path, { encoding: 'utf-8' }, (error, data) => {
-      if (error) {
-        reject(new Error('Cannot load the database'));
-      }
+const countStudents = (path) => new Promise((resolve, reject) => {
+  readFile(path, { encoding: 'utf-8' }, (error, data) => {
+    if (error) {
+      reject(new Error('Cannot load the database'));
+    } else {
       let str = '';
       const studentArr = [];
       const messages = [];
+      let studentCount = '';
 
       for (const i in data) {
         if (data[i] !== '\n') {
           str += data[i];
-        } else {
-          if (str !== '') {
-            studentArr.push(str.split(','));
-            str = '';
-          }
+        } else if (data[i] === '\n' && str !== '') {
+          studentArr.push(str.split(','));
+          str = '';
         }
       }
 
@@ -32,7 +30,7 @@ const countStudents = (path) => {
           fields.push(i[3]);
         }
       }
-
+      studentCount += `Number of students: ${students.length}\n`;
       for (const i of fields) {
         const n = [];
         for (const j of students) {
@@ -42,9 +40,9 @@ const countStudents = (path) => {
         }
         messages.push(`Number of students in ${i}: ${n.length}. List: ${n.join(', ')}`);
       }
-      resolve([messages, `Number of students: ${students.length}\n`]);
-    });
+      resolve([messages, studentCount]);
+    }
   });
-};
+});
 
 module.exports = countStudents;

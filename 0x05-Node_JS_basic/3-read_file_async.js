@@ -1,22 +1,19 @@
 const { readFile } = require('fs');
 
-const countStudents = (path) => {
-  return new Promise((resolve, reject) => {
-    readFile(path, { encoding: 'utf-8' }, (error, data) => {
-      if (error) {
-        reject(new Error('Cannot load the database'));
-      }
+const countStudents = (path) => new Promise((resolve, reject) => {
+  readFile(path, { encoding: 'utf-8' }, (error, data) => {
+    if (error) {
+      reject(new Error('Cannot load the database'));
+    } else {
       let str = '';
       const studentArr = [];
 
       for (const i in data) {
         if (data[i] !== '\n') {
           str += data[i];
-        } else {
-          if (str !== '') {
-            studentArr.push(str.split(','));
-            str = '';
-          }
+        } else if (data[i] === '\n' && str !== '') {
+          studentArr.push(str.split(','));
+          str = '';
         }
       }
 
@@ -42,8 +39,8 @@ const countStudents = (path) => {
         console.log(`Number of students in ${i}: ${n.length}. List: ${n.join(', ')}`);
       }
       resolve(data);
-    });
+    }
   });
-};
+});
 
 module.exports = countStudents;
