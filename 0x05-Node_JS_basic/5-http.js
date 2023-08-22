@@ -11,18 +11,14 @@ const app = http.createServer(async (req, res) => {
     let messages = [];
     let studentCount = '';
     try {
-      if (argv[2]) {
-        [messages, studentCount] = await countStudents(argv[2]);
-      } else {
-        [messages, studentCount] = await countStudents('database.csv');
-      }
+      [messages, studentCount] = await countStudents(argv[2]);
+      const head = 'This is the list of our students\n';
+      const filteredMessages = messages.join('\n');
+      const result = `${head}${studentCount}${filteredMessages}`;
+      res.end(result);
     } catch (error) {
-      console.log(error);
+      res.end('Cannot load the database');
     }
-    const head = 'This is the list of our students\n';
-    const filteredMessages = messages.join('\n');
-    const result = `${head}${studentCount}${filteredMessages}`;
-    res.end(result);
   }
 });
 
