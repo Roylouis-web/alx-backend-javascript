@@ -20,6 +20,10 @@ describe('Test rounded sum', () => {
   });
 
   it('test for a decimal and a whole number', () => {
-    assert.strictEqual(calculateNumber(1, 3.7), 5);
+    assert.strictEqual(calculateNumber(1, 0), 1);
+  });
+
+  it('test for a decimal and a whole number', () => {
+    assert.strictEqual(calculateNumber(-1, -3.7), -5);
   });
 });
