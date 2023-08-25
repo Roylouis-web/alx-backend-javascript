@@ -1,13 +1,13 @@
 const { describe, it, beforeEach, afterEach } = require('mocha');
 const { assert } = require('chai');
-const { spy } = require('sinon');
+const sinon = require('sinon');
 const sendPaymentRequestToApi = require('./5-payment');
 
 describe('Test the interaction of sendPaymentRequestToApi and Utils class', () => {
   let consoleSpy;
 
   beforeEach(() => {
-    consoleSpy = spy(console, 'log');
+    consoleSpy = sinon.spy(console, 'log');
   });
 
   afterEach(() => {
