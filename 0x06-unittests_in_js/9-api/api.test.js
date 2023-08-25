@@ -2,7 +2,7 @@ const request = require('request');
 const { expect } = require('chai');
 const { describe, it } = require('mocha');
 
-describe('cart page', () => {
+describe('Cart page', () => {
   it('tests /cart/:id with correct request param', () => {
     request('http://localhost:7865/cart/12', (error, response, body) => {
       if (error) {
@@ -15,7 +15,7 @@ describe('cart page', () => {
     });
   });
 
-  it('tests /cart/:id with incorrect request param', () => {
+  it('tests GET /cart/:id with incorrect request param', () => {
     request('http://localhost:7865/cart/hello', (error, response, body) => {
       if (error) {
         console.log(error);
