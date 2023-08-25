@@ -3,6 +3,7 @@ class Utils {
     let result;
     let first;
     let second;
+
     if (type === 'SUM') {
       first = Math.round(a);
       second = Math.round(b);
