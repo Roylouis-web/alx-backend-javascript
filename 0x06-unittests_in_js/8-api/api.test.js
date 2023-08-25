@@ -22,6 +22,7 @@ describe('Index page', () => {
       }
       
       expect(response.statusCode).to.equal(404);
+      expect(response.complete).to.equal(true);
       expect(response.headers['content-type']).to.equal('text/html; charset=utf-8');
     });
   });
