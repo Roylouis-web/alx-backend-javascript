@@ -2,7 +2,7 @@ const request = require('request');
 const { expect } = require('chai');
 const { describe, it } = require('mocha');
 
-describe('GET /', () => {
+describe('Index page', () => {
   it('tests the home page end point', () => {
     request('http://localhost:7865', (error, response, body) => {
       if (error) {
