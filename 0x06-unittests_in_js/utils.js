@@ -1,15 +1,23 @@
 class Utils {
   static calculateNumber (type, a, b) {
     let result;
+    let first;
+    let second;
     if (type === 'SUM') {
-      result = Math.round(a + b);
+      first = Math.round(a);
+      second = Math.round(b);
+      result = first + second;
     } else if (type === 'SUBTRACT') {
-      result = Math.round(a - b);
+      first = Math.round(a);
+      second = Math.round(b);
+      result = first + second;
     } else if (type === 'DIVIDE') {
       if (Math.round(b) === 0) {
         result = 'Error';
       } else {
-        result = Math.round(a / b);
+	first = Math.round(a);
+	second = Math.round(b);
+        result = first + second;
       }
     }
 

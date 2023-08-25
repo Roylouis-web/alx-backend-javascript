@@ -10,7 +10,7 @@ describe('Test rounded sum', () => {
     expect(calculateNumber('SUBTRACT', 5.9, 3.3)).to.equal(3);
   });
   it('test rounded division for negative non-decimal numbers', () => {
-    expect(calculateNumber('DIVIDE', -6, -4)).to.equal(2);
+    expect(calculateNumber('DIVIDE', -6, -4)).to.equal(1.5);
   });
   it('test rounded division for zero digits', () => {
     expect(calculateNumber('DIVIDE', 0, 0)).to.equal('Error');
