@@ -9,4 +9,9 @@ describe('getPaymentTokenFromAPI', () => {
     result.then(res => expect(res).deep.equal(obj));
     done();
   });
+
+  it('test the result of getPaymentTokenFromAPI(false)', () => {
+    const result = getPaymentTokenFromAPI(false);
+    expect(result).to.equal(undefined);
+  });
 });
