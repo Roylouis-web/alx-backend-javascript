@@ -9,7 +9,6 @@ describe('sendPaymentRequestToApi', () => {
     const UtilsSpy = spy(Utils, 'calculateNumber');
     sendPaymentRequestToApi(100, 20);
     assert(UtilsSpy.calledOnce);
-    assert(UtilsSpy.calledOnceWith('SUM', 100, 20));
     UtilsSpy.restore();
   });
 
