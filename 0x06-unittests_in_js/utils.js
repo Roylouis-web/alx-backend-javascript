@@ -16,8 +16,8 @@ class Utils {
       if (Math.round(b) === 0) {
         result = 'Error';
       } else {
-	first = Math.round(a);
-	second = Math.round(b);
+        first = Math.round(a);
+        second = Math.round(b);
         result = first / second;
       }
     }
