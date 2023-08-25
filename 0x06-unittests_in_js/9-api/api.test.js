@@ -2,7 +2,7 @@ const request = require('request');
 const { expect } = require('chai');
 const { describe, it } = require('mocha');
 
-describe('Cart page', () => {
+describe('cart page', () => {
   it('tests /cart/:id with correct request param', () => {
     request('http://localhost:7865/cart/12', (error, response, body) => {
       if (error) {
