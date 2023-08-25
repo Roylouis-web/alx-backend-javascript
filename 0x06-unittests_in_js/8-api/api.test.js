@@ -9,6 +9,7 @@ describe('Index page', () => {
         console.log(error);
       }
       expect(response.statusCode).to.equal(200);
+      expect(response.complete).to.equal(true);
       expect(response.headers['content-type']).to.equal('text/plain');
       expect(body).to.equal('Welcome to the payment system');
     });
