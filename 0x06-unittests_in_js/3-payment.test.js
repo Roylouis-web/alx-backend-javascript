@@ -7,7 +7,9 @@ const sendPaymentRequestToApi = require('./3-payment');
 describe('sendPaymentRequestToApi', () => {
   it('checks for right output of the Utils.calculateNumber method', () => {
     const UtilsSpy = spy(Utils, 'calculateNumber');
+
     sendPaymentRequestToApi(50, 24.52);
+
     assert(UtilsSpy.calledOnce);
     UtilsSpy.restore();
   });
