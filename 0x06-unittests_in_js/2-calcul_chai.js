@@ -8,7 +8,7 @@ const calculateNumber = (type, a, b) => {
   } else if (type === 'SUBTRACT') {
     result = first - second;
   } else if (type === 'DIVIDE') {
-    if (b === 0) {
+    if (second === 0) {
       result = 'Error';
     } else {
       result = first / second;
